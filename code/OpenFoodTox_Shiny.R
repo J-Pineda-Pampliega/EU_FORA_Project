@@ -26,56 +26,56 @@ library(webchem)   # To include information from PubChem
 
 # Option 1: From URL
 
-#Index <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "STUDY") # Load the datasheet
-#Index = Index %>% select("SUB_COM_ID","OP_ID","TOX_ID","GENOTOX_ID","HAZARD_ID") # Select columns
-#names(Index) = c("SUB_COM_ID","Output_Id","TOX_ID","GENOTOX_ID","HAZARD_ID") # Change of the name of columns to names more comprehensible
+Index <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "STUDY") # Load the datasheet
+Index = Index %>% select("SUB_COM_ID","OP_ID","TOX_ID","GENOTOX_ID","HAZARD_ID") # Select columns
+names(Index) = c("SUB_COM_ID","Output_Id","TOX_ID","GENOTOX_ID","HAZARD_ID") # Change of the name of columns to names more comprehensible
 
-#Component <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "COMPONENT")
-#Component <- Component %>% select(SUB_COM_ID,SUB_NAME,SUBPARAMNAME,QUALIFIER,COM_NAME,SUB_CASNUMBER,SUB_ECSUBINVENTENTRYREF,MOLECULARFORMULA,SMILESNOTATION,INCHI,IUPACNAME)
-#names(Component) = c("SUB_COM_ID","Substance","Description","has","Component","CAS_number", "EC_Ref_No", "Molecular_formula", "Smiles", "INCHI", "IUPAC_Name")
+Component <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "COMPONENT")
+Component <- Component %>% select(SUB_COM_ID,SUB_NAME,SUBPARAMNAME,QUALIFIER,COM_NAME,SUB_CASNUMBER,SUB_ECSUBINVENTENTRYREF,MOLECULARFORMULA,SMILESNOTATION,INCHI,IUPACNAME)
+names(Component) = c("SUB_COM_ID","Substance","Description","has","Component","CAS_number", "EC_Ref_No", "Molecular_formula", "Smiles", "INCHI", "IUPAC_Name")
 
-#Opinion <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "OPINION")
-#Opinion <- Opinion %>% select(AUTHOR,PUBLICATIONDATE,OP_ID,TITLE,DOCTYPE,REGULATION,URL)
-#names(Opinion) = c("Author","Published","Output_Id","Title", "Output_Type", "Legal_Basis", "URL")
+Opinion <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "OPINION")
+Opinion <- Opinion %>% select(AUTHOR,PUBLICATIONDATE,OP_ID,TITLE,DOCTYPE,REGULATION,URL)
+names(Opinion) = c("Author","Published","Output_Id","Title", "Output_Type", "Legal_Basis", "URL")
 
-#Refer_points <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "ENDPOINTSTUDY")
-#Refer_points <- Refer_points %>% select(TOX_ID,STUDY_CATEGORY,TESTTYPE,SPECIES,ROUTE,EXP_DURATION_DAYS,ENDPOINT,QUALIFIER,VALUE,DOSEUNIT,BASIS,TOXICITY)
-#names(Refer_points) = c("TOX_ID","Study","Test_Type", "Species", "Route", "Duration_(Days)", "Endpoint","Qualifier","Value_Reference_Point","Unit_Reference_Point","Effect","Toxicity")
+Refer_points <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "ENDPOINTSTUDY")
+Refer_points <- Refer_points %>% select(TOX_ID,STUDY_CATEGORY,TESTTYPE,SPECIES,ROUTE,EXP_DURATION_DAYS,ENDPOINT,QUALIFIER,VALUE,DOSEUNIT,BASIS,TOXICITY)
+names(Refer_points) = c("TOX_ID","Study","Test_Type", "Species", "Route", "Duration_(Days)", "Endpoint","Qualifier","Value_Reference_Point","Unit_Reference_Point","Effect","Toxicity")
 
-#Refer_values <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "CHEM_ASSESS")
-#Refer_values <- Refer_values %>% select(HAZARD_ID,ASSESSMENTTYPE,RISKVALUE,RISKUNIT,POPULATIONTEXT,REMARKS)
-#names(Refer_values) = c("HAZARD_ID","Assessment","Value_Reference_Value","Unit_Reference_Value","Population","Remarks")
+Refer_values <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "CHEM_ASSESS")
+Refer_values <- Refer_values %>% select(HAZARD_ID,ASSESSMENTTYPE,RISKVALUE,RISKUNIT,POPULATIONTEXT,REMARKS)
+names(Refer_values) = c("HAZARD_ID","Assessment","Value_Reference_Value","Unit_Reference_Value","Population","Remarks")
 
-#Genotox <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "GENOTOX")
-#Genotox <- Genotox %>% select(GENOTOX_ID,IS_GENOTOXIC)
-#names(Genotox) = c("GENOTOX_ID","Genotoxicity")
+Genotox <- read.xlsx("https://zenodo.org/record/4740174/files/OpenFoodToxTx22761_2021.xlsx?download=1", sheet = "GENOTOX")
+Genotox <- Genotox %>% select(GENOTOX_ID,IS_GENOTOXIC)
+names(Genotox) = c("GENOTOX_ID","Genotoxicity")
 
 
 # Option 2: From file
 
-Index <- read.xlsx("OpenFoodToxTx22761_2021.xlsx", sheet = "STUDY") # Load the datasheet
-Index = Index %>% select("SUB_COM_ID","OP_ID","TOX_ID","GENOTOX_ID","HAZARD_ID") # Select columns
-names(Index) = c("SUB_COM_ID","Output_Id","TOX_ID","GENOTOX_ID","HAZARD_ID") # Change of the name of columns to names more comprehensible
+#Index <- read.xlsx("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "STUDY") # Load the datasheet
+#Index = Index %>% select("SUB_COM_ID","OP_ID","TOX_ID","GENOTOX_ID","HAZARD_ID") # Select columns
+#names(Index) = c("SUB_COM_ID","Output_Id","TOX_ID","GENOTOX_ID","HAZARD_ID") # Change of the name of columns to names more comprehensible
 
-Component <- read.xlsx("OpenFoodToxTx22761_2021.xlsx", sheet = "COMPONENT")
-Component <- Component %>% select(SUB_COM_ID,SUB_NAME,SUBPARAMNAME,QUALIFIER,COM_NAME,SUB_CASNUMBER,SUB_ECSUBINVENTENTRYREF,MOLECULARFORMULA,SMILESNOTATION,INCHI,IUPACNAME)
-names(Component) = c("SUB_COM_ID","Substance","Description","has","Component","CAS_number", "EC_Ref_No", "Molecular_formula", "Smiles", "INCHI", "IUPAC_Name")
+#Component <- read.xlsx("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "COMPONENT")
+#Component <- Component %>% select(SUB_COM_ID,SUB_NAME,SUBPARAMNAME,QUALIFIER,COM_NAME,SUB_CASNUMBER,SUB_ECSUBINVENTENTRYREF,MOLECULARFORMULA,SMILESNOTATION,INCHI,IUPACNAME)
+#names(Component) = c("SUB_COM_ID","Substance","Description","has","Component","CAS_number", "EC_Ref_No", "Molecular_formula", "Smiles", "INCHI", "IUPAC_Name")
 
-Opinion <- read.xlsx("OpenFoodToxTx22761_2021.xlsx", sheet = "OPINION")
-Opinion <- Opinion %>% select(AUTHOR,PUBLICATIONDATE,OP_ID,TITLE,DOCTYPE,REGULATION,URL)
-names(Opinion) = c("Author","Published","Output_Id","Title", "Output_Type", "Legal_Basis", "URL")
+#Opinion <- read.xlsx("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "OPINION")
+#Opinion <- Opinion %>% select(AUTHOR,PUBLICATIONDATE,OP_ID,TITLE,DOCTYPE,REGULATION,URL)
+#names(Opinion) = c("Author","Published","Output_Id","Title", "Output_Type", "Legal_Basis", "URL")
 
-Refer_points <- read.xlsx("OpenFoodToxTx22761_2021.xlsx", sheet = "ENDPOINTSTUDY")
-Refer_points <- Refer_points %>% select(TOX_ID,STUDY_CATEGORY,TESTTYPE,SPECIES,ROUTE,EXP_DURATION_DAYS,ENDPOINT,QUALIFIER,VALUE,DOSEUNIT,BASIS,TOXICITY)
-names(Refer_points) = c("TOX_ID","Study","Test_Type", "Species", "Route", "Duration_(Days)", "Endpoint","Qualifier","Value_Reference_Point","Unit_Reference_Point","Effect","Toxicity")
+#Refer_points <- read.xlsx("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "ENDPOINTSTUDY")
+#Refer_points <- Refer_points %>% select(TOX_ID,STUDY_CATEGORY,TESTTYPE,SPECIES,ROUTE,EXP_DURATION_DAYS,ENDPOINT,QUALIFIER,VALUE,DOSEUNIT,BASIS,TOXICITY)
+#names(Refer_points) = c("TOX_ID","Study","Test_Type", "Species", "Route", "Duration_(Days)", "Endpoint","Qualifier","Value_Reference_Point","Unit_Reference_Point","Effect","Toxicity")
 
-Refer_values <- read.xlsx("OpenFoodToxTx22761_2021.xlsx", sheet = "CHEM_ASSESS")
-Refer_values <- Refer_values %>% select(HAZARD_ID,ASSESSMENTTYPE,RISKVALUE,RISKUNIT,POPULATIONTEXT,REMARKS)
-names(Refer_values) = c("HAZARD_ID","Assessment","Value_Reference_Value","Unit_Reference_Value","Population","Remarks")
+#Refer_values <- read.xlsx("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "CHEM_ASSESS")
+#Refer_values <- Refer_values %>% select(HAZARD_ID,ASSESSMENTTYPE,RISKVALUE,RISKUNIT,POPULATIONTEXT,REMARKS)
+#names(Refer_values) = c("HAZARD_ID","Assessment","Value_Reference_Value","Unit_Reference_Value","Population","Remarks")
 
-Genotox <- read.xlsx("OpenFoodToxTx22761_2021.xlsx", sheet = "GENOTOX")
-Genotox <- Genotox %>% select(GENOTOX_ID,IS_GENOTOXIC)
-names(Genotox) = c("GENOTOX_ID","Genotoxicity")
+#Genotox <- read.xlsx("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "GENOTOX")
+#Genotox <- Genotox %>% select(GENOTOX_ID,IS_GENOTOXIC)
+#names(Genotox) = c("GENOTOX_ID","Genotoxicity")
 
 # 3) To select columns -----------------------------------------------------------------
 

@@ -51,14 +51,15 @@ library(webchem)   # Functions to extract info from PubChem
 
 ### Each one of the datahseets of the database is load as an unic object.
 
+# If the chuck for loading tables indicates "Error: path does not exist", then copy and run in the console
 ```{r Load_tables, echo=TRUE, warning=TRUE}
-Index <- read_excel("OpenFoodTox.xlsx", sheet = "STUDY")
-Component <- read_excel("OpenFoodTox.xlsx", sheet = "COMPONENT")
-Opinion <- read_excel("OpenFoodTox.xlsx", sheet = "OPINION")
-Question <- read_excel("OpenFoodTox.xlsx", sheet = "QUESTION")
-Refer_points <- read_excel("OpenFoodTox.xlsx", sheet = "ENDPOINTSTUDY",guess_max = 11354)
-Refer_values <- read_excel("OpenFoodTox.xlsx", sheet = "CHEM_ASSESS")
-Genotox <- read_excel("OpenFoodTox.xlsx", sheet = "GENOTOX")
+Index <- read_excel("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "STUDY")
+Component <- read_excel("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "COMPONENT")
+Opinion <- read_excel("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "OPINION")
+Question <- read_excel("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "QUESTION")
+Refer_points <- read_excel("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "ENDPOINTSTUDY",guess_max = 11354)
+Refer_values <- read_excel("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "CHEM_ASSESS")
+Genotox <- read_excel("./data/OpenFoodToxTx22761_2021.xlsx", sheet = "GENOTOX")
 ```
 
 ### Step 2: Substance to search
