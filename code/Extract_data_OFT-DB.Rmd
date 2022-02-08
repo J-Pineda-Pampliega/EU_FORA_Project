@@ -2,7 +2,7 @@
 title: "Extract_data_OFT-DB"
 author: "Javier Pineda"
 date: "21/10/2021"
-last modification: "12/06/2021"
+last modification: "13/06/2021"
 output:
   pdf_document: default
   html_document: default

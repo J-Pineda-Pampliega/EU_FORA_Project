@@ -1,7 +1,7 @@
 # Title and definition ----------------------------------------------------
 
 # Web version of the final function to extract data from OpenFoodTox.xlsx.
-# It is created using Shiny
+# It is created using Shiny 
 
 # Regarding upload to the web: 
 #   https://www.shinyapps.io/
