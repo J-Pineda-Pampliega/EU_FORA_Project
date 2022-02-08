@@ -88,7 +88,7 @@ list_of_columns = c("Substance","Description","Component","CAS_number","EC_Ref_N
 css <- ".nowrap {white-space: nowrap;}" # Format-style to make that text in table in the screens be in only one line.
 
 
-# 3.1) UI: User interface, what you see in the screen ------------------------
+# 4.1) UI: User interface, what you see in the screen ------------------------
 
 
 
@@ -135,6 +135,7 @@ ui <- fluidPage(
   )
 )
 
+# 4.2) Server: The real program ------------------------
 
 server <- function(input, output, session) {
   
