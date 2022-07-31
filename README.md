@@ -1,4 +1,4 @@
 # EU_FORA_Project
-Script to extract information from OSF-DB
 
-It includes an R function file, and another R file to create a web function using R and Shiny.
+This repository have the codes related to the project EU-FORA:
+"Developing a framework for open and FAIR data management practices for next generation risk- and benefit assessment of fish and seafood"
